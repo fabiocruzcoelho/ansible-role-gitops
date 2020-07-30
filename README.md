@@ -45,7 +45,7 @@ Available variables are along with default values (see defaults/main.yml):
     git_branch: master
     git_username: test
     git_password: '@mudar'
-    git_clone_tmp: /tmp/{{ git_clone_tmp }}
+    git_clone_tmp: /tmp/{{ git_repo_name }}
   tasks:
   - name: clone
     block:
