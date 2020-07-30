@@ -1,10 +1,13 @@
-image: $CI_REGISTRY/lint/ansible
+---
+image: $CI_REGISTRY/estudosdevops/pipeline/jobs/ansible:master
 
 stages:
-- test
+  - lint
 
-lint-test:
-  stage: test
+before_script:
+  - ansible-lint --version
+
+ansible-lint:
+  stage: lint
   script:
-    - ansible-lint $CI_PROJECT_DIR/lint-it.yml
-    - find . -iname "*.yml" | xargs ansible-lint
+    - ansible-lint -v *.yml

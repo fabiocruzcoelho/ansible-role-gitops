@@ -1,8 +1,6 @@
 ---
 - name: Lint it
-  hosts: localhost
-  connection: local
-  gather_facts: false
-  become: yes
+  hosts: all
+  gather_facts: yes
   roles:
     - '../'

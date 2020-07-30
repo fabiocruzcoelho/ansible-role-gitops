@@ -1,6 +1,6 @@
 ---
 - name: Install packages
-  package:
+  apt:
     name:
       - git
     state: present
@@ -13,4 +13,3 @@
 #     path: "{{ http_git_clone_path }}"
 #     state: absent
 #   when: cleanup_clone_path | bool
-

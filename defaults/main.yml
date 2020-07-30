@@ -1,7 +1,7 @@
 ---
-http_git_clone_path: /code
-http_git_username: fabiocoelho81
-http_git_password: "dqs3083!@"
+http_git_clone_path: /tmp
+http_git_username: admin
+http_git_password: "@Mudar"
 http_git_protocol: http
 http_git_host: git.sme.prefeitura.sp.gov.br
 http_git_uri: /cotic/infraestrutura/ha-nginx
