@@ -1,0 +1,16 @@
+---
+- name: Install packages
+  package:
+    name:
+      - git
+    state: present
+
+- name: git clone
+  shell: "git clone -b {{ http_git_branch }} {{ repository }} {{ http_git_clone_path }}"
+
+# - name: Cleanup clone path
+#   file:
+#     path: "{{ http_git_clone_path }}"
+#     state: absent
+#   when: cleanup_clone_path | bool
+

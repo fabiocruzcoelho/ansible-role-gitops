@@ -1,0 +1,10 @@
+image: $CI_REGISTRY/lint/ansible
+
+stages:
+- test
+
+lint-test:
+  stage: test
+  script:
+    - ansible-lint $CI_PROJECT_DIR/lint-it.yml
+    - find . -iname "*.yml" | xargs ansible-lint

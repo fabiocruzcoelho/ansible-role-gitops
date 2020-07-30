@@ -1,0 +1,2 @@
+---
+repository: "{{http_git_protocol}}://{{http_git_username | urlencode }}:{{http_git_password | urlencode }}@{{http_git_host}}{{http_git_uri}}"
