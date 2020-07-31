@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to role http_git 👋</h1>
+<h1 align="center">Welcome to role gitops 👋</h1>
 <p>
   <a href="https://gitlab.com/estudosdevops/ansible/roles/http_git/-/commits/master">
   <img alt="pipeline status" src="https://gitlab.com/estudosdevops/ansible/roles/http_git/badges/master/pipeline.svg" /></a>
