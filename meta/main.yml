@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: gitops
   author: Fabio Coelho
-  description: Git clone via http or https
+  description: Git clone via HTTP or HTTPS
   company: GPiT Consultoria
 
   license: license (BSD, MIT)
