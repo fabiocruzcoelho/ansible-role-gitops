@@ -22,7 +22,7 @@
 
 ```yml
 ---
-- name: http_git
+- name: gitops
   src: fabiocruzcoelho.gitops
 ```
 
