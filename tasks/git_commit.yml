@@ -1,0 +1,29 @@
+---
+- name: Git commit
+  block:
+    - name: git add all new files
+      shell: git add -A
+      args:
+        chdir: "{{ gitops.repo_path }}"
+
+    - name: git status
+      shell: git status
+      args:
+        chdir: "{{ gitops.repo_path }}"
+      register: git_add_status
+
+    - include_tasks: git_config.yml
+
+    - name: git commit
+      shell: git commit -a -m "'{{ gitops.msg }}'"
+      args:
+        chdir: "{{ gitops.repo_path }}"
+      ignore_errors: yes
+
+    - name: git push
+      shell: git push --force
+      args:
+        chdir: "{{ gitops.repo_path }}"
+  when: gitops_commit | bool
+
+- include_tasks: git_cleanup.yml

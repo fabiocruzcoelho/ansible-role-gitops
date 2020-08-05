@@ -1,0 +1,7 @@
+---
+- name: Git clone
+  git:
+    repo: "{{ repository }}"
+    dest: "{{ gitops.repo_path }}"
+    version: "{{ gitops.branch }}"
+  when: gitops_clone | bool

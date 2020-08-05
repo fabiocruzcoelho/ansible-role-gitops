@@ -1,0 +1,12 @@
+- name: Git config
+  block:
+    - name: Git config user.name
+      shell: git config user.name "{{ gitops.username }}"
+      args:
+        chdir: "{{ gitops.repo_path }}"
+
+    - name: Git config user.email
+      shell: git config user.email "{{ gitops.email }}"
+      args:
+        chdir: "{{ gitops.repo_path }}"
+  when: gitops_commit | bool

@@ -1,15 +1,14 @@
 ---
-- name: Install packages
-  apt:
-    name:
-      - git
-    state: present
+- name: Git
+  block:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+      when: ansible_os_family == 'Debian'
 
-- name: git clone
-  shell: "git clone -b {{ http_git_branch }} {{ repository }} {{ http_git_clone_path }}"
+    - include_tasks: git_clone.yml
+  when: gitops_clone | bool
 
-# - name: Cleanup clone path
-#   file:
-#     path: "{{ http_git_clone_path }}"
-#     state: absent
-#   when: cleanup_clone_path | bool
+- include_tasks: git_commit.yml
+  when: gitops_commit | bool

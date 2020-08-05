@@ -1,0 +1,5 @@
+---
+- name: Cleanup repo path
+  file:
+    path: "{{ gitops.repo_path }}"
+    state: absent

@@ -14,7 +14,7 @@
   </a>
 </p>
 
-> Clone repository via http or https
+> Clone repository via HTTP or HTTPS
 
 ## Install
 
@@ -23,7 +23,7 @@
 ```yml
 ---
 - name: http_git
-  src: fabiocruzcoelho.http_git
+  src: fabiocruzcoelho.gitops
 ```
 
 ```sh
@@ -37,28 +37,47 @@ Available variables are along with default values (see defaults/main.yml):
 ## Examplo playbook
 
 ```yml
-- name: Git clone
-  hosts: all
-  gather_facts: no
+---
+- name: Lint it
+  hosts: localhost
+  gather_facts: yes
+  become: yes
   vars:
-    git_repo_name: test
-    git_branch: master
-    git_username: test
-    git_password: '@mudar'
-    git_clone_tmp: /tmp/{{ git_repo_name }}
+    git_project_name: gitops
+    git_clone_path: "/projects/{{ git_project_name }}"
+    git_username: ''
+    git_password: ''
+
   tasks:
-  - name: clone
-    block:
-      - name: http_git
-        include_role:
-            name: http_git
-        vars:
-          http_git_clone_path: "{{ git_clone_tmp }}"
-          http_git_username: "{{ git_username}}"
-          http_git_password: "{{ git_password }}"
-          http_git_branch: "{{ git_branch }}"
-          http_git_host: gitlab.com
-          http_git_uri: "/http_git.git"
+  - name: Git clone
+    include_role:
+      name: gitops
+    vars:
+      gitops_clone: yes
+      gitops:
+        repo_path: "{{ git_clone_path }}"
+        username: "{{ git_username }}"
+        password: "{{ git_password }}"
+        protocol: http
+        url: gitlab.com
+        repo_uri: /ansible/roles/{{ git_project_name }}.git
+        branch: master
+
+  - name: Create new file
+    file:
+      path: "{{ git_clone_path }}/foo.conf"
+      state: touch
+
+  - name: Git commit
+    include_role:
+      name: gitops
+    vars:
+      gitops_commit: yes
+      gitops:
+        username: "{{ git_username }}"
+        email: ansible_git@ansible.com
+        msg: 'Added: new Virtual Host by Ansble'
+        repo_path: "{{ git_clone_path }}"
 ```
 
 ## Run tests
@@ -68,13 +87,12 @@ Available variables are along with default values (see defaults/main.yml):
 - [ansible-role-tester](https://github.com/fubarhouse/ansible-role-tester)
 
 ```sh
-git clone https://gitlab.com/estudosdevops/ansible/roles/http_git.git
+git clone https://gitlab.com/estudosdevops/ansible/roles/gitops.git
 ```
 
 ```sh
 make test
 ```
-
 
 ## Author
 

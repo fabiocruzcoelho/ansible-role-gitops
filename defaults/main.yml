@@ -1,8 +1,17 @@
 ---
-http_git_clone_path: /tmp
-http_git_username: admin
-http_git_password: "@Mudar"
-http_git_protocol: http
-http_git_host: git.sme.prefeitura.sp.gov.br
-http_git_uri: /cotic/infraestrutura/ha-nginx
-http_git_branch: master
+# Set default vars
+gitops:
+  repo_path: /tmp
+  username: admin
+  email: ansible_git@ansible.com
+  password: "@Mudar"
+  protocol: http
+  url: gitlab.com
+  repo_uri: /estudosdevops/ansible/roles/
+  branch: master
+  msg: 'added: new Virtual Host by Ansble'
+
+# Only applies if gitops is `true`.
+gitops_clone: no
+gitops_commit: no
+# gitops_push: no
