@@ -2,10 +2,10 @@
 <p>
 
   <img alt="Build Status" src="https://travis-ci.com/fabiocruzcoelho/ansible-role-gitops.svg?branch=master" /></a>
-  <a href="https://gitlab.com/estudosdevops/ansible/roles/http_git/-/commits/master">
-  <img alt="pipeline status" src="https://gitlab.com/estudosdevops/ansible/roles/http_git/badges/master/pipeline.svg" /></a>
+  <a href="https://gitlab.com/estudosdevops/ansible/roles/gitops/-/commits/master">
+  <img alt="pipeline status" src="https://gitlab.com/estudosdevops/ansible/roles/gitops/badges/master/pipeline.svg" /></a>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://gitlab.com/estudosdevops/ansible/roles/http_git/-/blob/master/README.md" target="_blank">
+  <a href="https://gitlab.com/estudosdevops/ansible/roles/gitops/-/blob/master/README.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://gitlab.com/estudosdevops/ansible/roles/gitops/-/raw/master/LICENSE" target="_blank">
@@ -34,7 +34,7 @@ ansible-galaxy install -r requirements.yml
 
 ## Role Variables
 
-Available variables are along with default values (see defaults/main.yml):
+Available variables are along with default values see: [defaults/main.yml](https://gitlab.com/estudosdevops/ansible/roles/gitops/-/blob/master/defaults/main.yml)
 
 ## Examplo playbook
 
@@ -107,7 +107,7 @@ make test
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
-<br />Feel free to check [issues page](https://gitlab.com/estudosdevops/ansible/roles/http_git/-/issues).
+<br />Feel free to check [issues page](https://gitlab.com/estudosdevops/ansible/roles/gitops/-/issues).
 
 ## Show your support
 
