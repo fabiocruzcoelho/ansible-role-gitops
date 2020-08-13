@@ -8,7 +8,7 @@
   <a href="https://gitlab.com/estudosdevops/ansible/roles/http_git/-/blob/master/README.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT" target="_blank">
+  <a href="https://gitlab.com/estudosdevops/ansible/roles/gitops/-/raw/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://twitter.com/fcruzcoelho" target="_blank">
