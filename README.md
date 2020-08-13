@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to role gitops 👋</h1>
 <p>
-  <img alt="Build Status" src="https://img.shields.io/travis/fabiocruzcoelho/ansible-role-gitops/master.svg?style=for-the-badge"
-  <a href="https://travis-ci.org/fabiocruzcoelho/ansible-role-gitops">
+
+  <img alt="Build Status" src="https://travis-ci.com/fabiocruzcoelho/ansible-role-gitops.svg?branch=master" /></a>
   <a href="https://gitlab.com/estudosdevops/ansible/roles/http_git/-/commits/master">
   <img alt="pipeline status" src="https://gitlab.com/estudosdevops/ansible/roles/http_git/badges/master/pipeline.svg" /></a>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
