@@ -6,36 +6,36 @@
   vars:
     git_project_name: gitops
     git_clone_path: "/projects/{{ git_project_name }}"
-    git_username: ''
-    git_password: ''
+    git_username: ""
+    git_password: ""
 
   tasks:
-  - name: Git clone
-    include_role:
-      name: gitops
-    vars:
-      gitops_clone: yes
-      gitops:
-        repo_path: "{{ git_clone_path }}"
-        username: "{{ git_username }}"
-        password: "{{ git_password }}"
-        protocol: http
-        url: gitlab.com
-        repo_uri: /estudosdevops/ansible/roles/{{ git_project_name }}.git
-        branch: master
+    - name: Git clone
+      include_role:
+        name: gitops
+      vars:
+        gitops_clone: yes
+        gitops:
+          repo_path: "{{ git_clone_path }}"
+          username: "{{ git_username }}"
+          password: "{{ git_password }}"
+          protocol: http
+          url: gitlab.com
+          repo_uri: /estudosdevops/ansible/roles/{{ git_project_name }}.git
+          branch: master
 
-  - name: Create new file
-    file:
-      path: "{{ git_clone_path }}/foo.conf"
-      state: touch
+    - name: Create new file
+      file:
+        path: "{{ git_clone_path }}/foo.conf"
+        state: touch
 
-  - name: Git commit
-    include_role:
-      name: gitops
-    vars:
-      gitops_commit: yes
-      gitops:
-        username: "{{ git_username }}"
-        email: ansible_git@ansible.com
-        msg: 'Added: new Virtual Host by Ansble'
-        repo_path: "{{ git_clone_path }}"
+    - name: Git commit
+      include_role:
+        name: gitops
+      vars:
+        gitops_commit: yes
+        gitops:
+          username: "{{ git_username }}"
+          email: ansible_git@ansible.com
+          msg: "Added: new Virtual Host by Ansble"
+          repo_path: "{{ git_clone_path }}"

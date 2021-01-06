@@ -1,3 +1,4 @@
+---
 - name: Git config
   block:
     - name: Git config user.name
